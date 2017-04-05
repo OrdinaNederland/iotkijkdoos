@@ -2,8 +2,6 @@ class RGB {
   
   public:
     RGB(int redPin, int greenPin, int bluePin);
-    void begin();
-    char getColorChar(SoftwareSerial &bluetooth);
     void setColor(char input);
     void showGradient();
     void reset();
@@ -20,9 +18,10 @@ class RGB {
      const int aqua[3] = {0, 255, 255}; 
      const int blue[3] = {0, 0, 255}; 
      const int purple[3] = {255, 0, 255}; 
-     int allColors[7][3];
-     
+     int *allColors[7];
+
      void writeColor(int rgbValues[3]);
+     
 };
 
 

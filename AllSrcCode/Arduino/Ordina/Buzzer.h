@@ -4,7 +4,6 @@ class Buzzer  {
  
  public:
   Buzzer(int pin);
-  void begin();
   void alarm(LED led1, LED led2);
   void vaderJacob(LED led1, LED led2);
   void customSound();
@@ -12,8 +11,6 @@ class Buzzer  {
  private:
   void setLEDToPreviousState(LED led1, bool wasOnLED1, LED led2, bool wasOnLED2);
   int _pin;
-  char on = '1';
-  char off = '0';
   
   //Vader Jacob
   int frequence[16] = {523, 587, 659, 523, 659, 699, 784, 784, 880, 784, 699, 659, 523, 523, 659, 523};

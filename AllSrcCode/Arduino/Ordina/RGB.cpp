@@ -6,36 +6,21 @@ RGB::RGB(int redPin, int greenPin, int bluePin) {
   _redPin = redPin;
   _greenPin = greenPin;
   _bluePin = bluePin;
-}
 
-void RGB::begin() {
   pinMode(_redPin, OUTPUT);
   pinMode(_greenPin, OUTPUT);
   pinMode(_bluePin, OUTPUT);
 
   //Create one array with all colors 
-  byte arraySize = 3 * sizeof(int);
-  memcpy(allColors[0], off, arraySize);
-  memcpy(allColors[1], red, arraySize);
-  memcpy(allColors[2], yellow, arraySize);
-  memcpy(allColors[3], green, arraySize);
-  memcpy(allColors[4], aqua, arraySize);
-  memcpy(allColors[5], blue, arraySize);
-  memcpy(allColors[6], purple, arraySize);
+  allColors[0] = off;
+  allColors[1] = red;
+  allColors[2] = yellow;
+  allColors[3] = green;
+  allColors[4] = aqua;
+  allColors[5] = blue;
+  allColors[6] = purple;
 }
 
-char RGB::getColorChar(SoftwareSerial &bluetooth) {
-  int count = 0;
-  char input = '\0';
-  
-  while (count == 0) {
-    if (bluetooth.available() > 0) {
-      input = bluetooth.read();
-      count++;
-    } 
-  }
-  return input;
-}
 
 void RGB::setColor(char input)  { 
   int index = input - '0';
